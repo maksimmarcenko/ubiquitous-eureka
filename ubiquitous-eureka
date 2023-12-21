@@ -1,0 +1,13 @@
+        return AppStore(
+            initial: AppState(collageSize: collageSize, collage: collage),
+            reducer: AppReducerBuilder.reducer,
+            backgroundRemoval: BackgroundRemoval(context: SharedContext.context)
+        )
+    }
+}
+
+enum AppAction {
+    case gesture(GestureType)
+    case setCollage(Collage)
+    case changeCollage(CollageModification)
+    case selectElement(ElementType)
